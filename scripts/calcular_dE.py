@@ -1,6 +1,5 @@
 
 
-
 def calcular_dE(datos, variacion_min, filtro_fuerte, filtro_suave):
     caotico = False
     necesito_ver_mas = False

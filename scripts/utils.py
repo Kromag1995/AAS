@@ -1,4 +1,18 @@
+import numpy as np
 import time
+
+
+def binarizarion(s, measure_method):
+    measure = measure_method(s)
+    serie_bin = []
+    for i in s:
+        if i > measure:
+            serie_bin.append(1)
+        else:
+            serie_bin.append(0)
+    return serie_bin, measure
+
+
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█', printEnd = "\r"):
     """
     Call in a loop to create terminal progress bar
@@ -17,8 +31,9 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
     bar = fill * filledLength + '-' * (length - filledLength)
     print(f'\r{prefix} |{bar}| {percent}% {suffix}', end = printEnd)
     # Print New Line on Complete
-    if iteration == total: 
+    if iteration == total:
         print()
+
 
 def medir_tiempo(t_0):
     t = time.time()
